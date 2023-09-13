@@ -8,9 +8,16 @@ public class PokemonGame {
         Pikachu p1 = new Pikachu();
         Pokemon c1 = new Charizard();  // upcast
 
+        // anonymous object as parameter
         s1.setFlyable(new NoFly());
         p1.setFlyable(new NoFly());
-        c1.setFlyable(new Wings());
+        c1.setFlyable(new Wings(){
+            @Override
+            public void fly() {
+                System.out.println("강철 날개로 날아갑니다!");
+            }
+        });
+        //c1.setFlyable(new Wings());  // Flyable 인터페이스의 default method를 사용
 
         p1.performFly();
         c1.performFly();
