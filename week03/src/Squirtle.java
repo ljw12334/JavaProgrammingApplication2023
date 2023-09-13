@@ -1,5 +1,3 @@
-package version11;
-
 public class Squirtle extends Pokemon{
     public Squirtle() {
         super();  // 부모 클래스의 기본 생성자 호출 (생략 가능)

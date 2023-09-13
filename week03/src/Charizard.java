@@ -1,5 +1,3 @@
-package version11;
-
 public class Charizard extends Pokemon{
     public Charizard() {
         System.out.println("자식 클래스(리자몽)의 기본 생성자");

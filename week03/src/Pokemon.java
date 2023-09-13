@@ -1,5 +1,3 @@
-package version11;
-
 //public final class Pokemon {
 public class Pokemon {
     //private int level;
@@ -45,6 +43,12 @@ public class Pokemon {
         System.out.println(this.name + "이(가) 광역 도발 공격을 시전합니다");
     }
     public void evolve(){  // 매개변수 제거
+        if(this instanceof Pikachu){
+            System.out.println("삐까삐까~");
+        }else if(this instanceof Squirtle){
+            System.out.println("꼬북꼬북...");
+        }
+
         this.level = this.level + 1;  // 매개변수 pokemon 대신에 this 사용
         this.hp = this.hp + 100;  // 레벨 업시 체력 +100
         String texts = """
