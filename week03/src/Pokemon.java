@@ -4,31 +4,43 @@ public class Pokemon {
     private String name;
     private int level;
     private int hp;
+    // static member variable (정적 멤버 변수, 클래스 멤버 변수)
+    //static int pokemonCount = 0; // 인스턴스(객체) 생성없이 클래스명.형태로 사용 가능
+    private static int pokemonCount = 0;
+
 
     // constructor, 생성자(특수 형태의 메서드)
     // 리턴타입이 없으며 클래스의 이름과 같다
     Pokemon(){
         System.out.println("포켓몬 객체 생성(기본 생성자)!");
         this.hp = 100;
+        pokemonCount++;
     }
 
     // constructor overloading
     // 생성자 오버로딩
     Pokemon(String name){
-        this(name, 1); // 항상 생성자 첫 번째 줄에 있어야 함
+        //this(name, 1); // 항상 생성자 첫 번째 줄에 있어야 함
         System.out.println("포켓몬 객체 생성(매개변수 1개 생성자)!");
-//        this.name = name;
-//        this.level = 1;
-//        this.hp = 100;
+        this.name = name;
+        this.level = 1;
+        this.hp = 100;
+        pokemonCount++;
     }
     Pokemon(String name, int level) {
         System.out.println("포켓몬 객체 생성(매개변수 2개 생성자)!");
         this.name = name;
         this.level = level;
         this.hp = 100;
+        pokemonCount++;
     }
 
     // alt+insert
+
+    public static int getPokemonCount() {
+        return pokemonCount;
+    }
+
     public String getName() {
         return name;
     }
