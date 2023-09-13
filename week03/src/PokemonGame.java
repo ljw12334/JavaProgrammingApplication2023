@@ -20,6 +20,10 @@ public class PokemonGame {
         p1.setFlyable(jetPack);  // NoFly 객체 -> JetPack 객체로
         p1.performFly();
 
+        Balloon balloon = new Balloon();
+        s1.setFlyable(balloon);
+        s1.performFly();
+
 //        c1.attack();
 //        c1.evolve();
 //        //c1.type();  // 부모 클래스의 변수로는 자식 클래스의 전용 메서드를 볼 수 없다.
