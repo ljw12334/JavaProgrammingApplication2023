@@ -13,7 +13,7 @@ public class Pokemon {
 
     // constructor, 생성자(특수 형태의 메서드)
     // 리턴타입이 없으며 클래스의 이름과 같다
-    Pokemon(){
+    public Pokemon(){
         System.out.println("포켓몬 객체 생성(기본 생성자)!");
         this.hp = 100;
         pokemonCount++;
@@ -21,7 +21,7 @@ public class Pokemon {
 
     // constructor overloading
     // 생성자 오버로딩
-    Pokemon(String name){
+    public Pokemon(String name){
         //this(name, 1); // 항상 생성자 첫 번째 줄에 있어야 함
         System.out.println("포켓몬 객체 생성(매개변수 1개 생성자)!");
         this.name = name;
@@ -29,7 +29,7 @@ public class Pokemon {
         this.hp = 100;
         pokemonCount++;
     }
-    Pokemon(String name, int level) {
+    public Pokemon(String name, int level) {
         System.out.println("포켓몬 객체 생성(매개변수 2개 생성자)!");
         this.name = name;
         this.level = level;
