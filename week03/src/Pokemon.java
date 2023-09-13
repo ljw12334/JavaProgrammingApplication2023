@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Pokemon {
     // fields, 멤버 변수, 속성
     // 캡슐화
@@ -81,7 +83,16 @@ public class Pokemon {
     // methods, 멤버 함수, 행위
     void evolve(Pokemon pokemon){
         pokemon.level = pokemon.level + 1;
-        System.out.println(pokemon.name + "의 레벨이 " + pokemon.level + "으로 증가!");
+        // escape sequence를 이용한 출력 형태 조정
+        //System.out.println("\t" + pokemon.name + "의 레벨이\n\t" + pokemon.level + "으로 증가!");
+
+        // jdk15부터 지원하는 Text block과 replace 메서드(메서드 체이닝 기법) 사용
+        String texts = """
+                    name의 레벨이
+                    level으로 증가!
+                """.replace("level", pokemon.level + "")
+                .replace("name", pokemon.name);
+        System.out.println(texts);
     }
     void attack(){
         System.out.println(this.name + "이(가) 광역 도발 공격을 시전합니다");
