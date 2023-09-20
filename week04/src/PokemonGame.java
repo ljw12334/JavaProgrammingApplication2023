@@ -7,8 +7,9 @@ public class PokemonGame {
 //        System.out.println((int)(Math.random() * 6) + 1);
         int enemyPick = (int)(Math.random() * 3);
 
-        Pokemon enemyPokemon;
-        Pokemon myPokemon;
+        Pokemon enemyPokemon = null;
+        Pokemon myPokemon = null;          //추상클래스 변수선언 가능
+//        Pokemon pokemon = new Pokemon(); //추상클래스의 객체 생성은 불가
 
         if (enemyPick == 0) {
             NoFly noFly = new NoFly();
@@ -33,7 +34,7 @@ public class PokemonGame {
         } else if (pokemonPick == 3) {
             myPokemon = new Charizard(new Wings());
         } else {
-            System.out.println("정상적인 값이 아닙니다!1");
+            System.out.println("정상적인 값이 아닙니다!");
         }
 
         int menu;
@@ -42,7 +43,7 @@ public class PokemonGame {
             menu = scanner.nextInt();
 
             if (menu == 1) {
-
+                myPokemon.attack(enemyPokemon);
             } else if (menu == 2) {
 
             } else {
