@@ -1,10 +1,12 @@
 public class Charizard extends Pokemon{
-    public Charizard() {
-        System.out.println("자식 클래스(리자몽)의 기본 생성자");
+    public Charizard(Flyable f) {
+        System.out.println("자몽자몽!");
         this.level = 36;
 //      this.setLevel(36);
         this.setHp(78);
         this.name = "리자몽";
+
+        this.flyable = f;
     }
 
     public Charizard(int level, int hp, String name) {

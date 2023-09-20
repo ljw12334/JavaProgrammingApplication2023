@@ -1,13 +1,22 @@
 
 public class PokemonGame {
     public static void main(String[] args) {
-        Pikachu pikachu = new Pikachu();
-        //pikachu.setFlyable(new NoFly());  // 프로그램 실행 중 동적으로 하늘을 나는 방식을 변경
-        pikachu.performFly();
-        /*
-        피카츄이(가) Exception in thread "main" java.lang.NullPointerException: Cannot invoke "Flyable.fly()" because "this.flyable" is null
-	at Pokemon.performFly(Pokemon.java:18)
-	at PokemonGame.main(PokemonGame.java:5)
-         */
+        System.out.println("포켓몬 게임을 시작합니다\n야생 포켓몬이 나타났습니다");
+//        System.out.println(Math.random());
+//        System.out.println((int)(Math.random() * 6) + 1);
+        int enemyPick = (int)(Math.random() * 3);
+
+        if (enemyPick == 0) {
+            NoFly noFly = new NoFly();
+            Pikachu pikachu = new Pikachu(noFly);
+        } else if (enemyPick == 1) {
+            NoFly noFly = new NoFly();
+            Squirtle squirtle = new Squirtle(noFly);
+        } else if (enemyPick == 2) {
+            Wings wings = new Wings();
+            Charizard charizard = new Charizard(wings);
+        } else {
+
+        }
     }
 }
