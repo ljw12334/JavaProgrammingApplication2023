@@ -5,7 +5,9 @@ public class Squirtle extends Pokemon{
         System.out.println("꼬북꼬북!");
         //this.setLevel(1);
         this.level = 1;
+        this.evolveRate = 2;
         this.attackRate = 48;
+//        this.attackRate = (int)(Math.random() * 4) + 45;
         this.defenceRate = 65;
         this.setHp(44);
         this.name = "꼬부기";

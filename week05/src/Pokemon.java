@@ -3,7 +3,9 @@ public abstract class Pokemon {
     //private int level;
     protected int level;
     private int hp;
-    protected int attackRate, defenceRate;
+    protected int evolveRate, attackRate, defenceRate;
+    protected String[] skills; // 최대 4가지 skill
+    protected int[] specialAttackRate; // 위력
     protected String name;
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
@@ -91,8 +93,13 @@ public abstract class Pokemon {
             temporaryAttackRate = targetPokemon.defenceRate - this.attackRate;
 
         if (temporaryAttackRate == 0) {
-            System.out.println("효과가 없는 듯 하다...");
+            targetPokemon.hp--;
         } else {
+            int critical = (int)(Math.random() * 24);
+            if (critical >= 23) {
+                temporaryAttackRate = (int)(temporaryAttackRate * 1.5f);
+                System.out.println("급소에 맞았다!");
+            }
             targetPokemon.hp = targetPokemon.hp - temporaryAttackRate;
         }
 
