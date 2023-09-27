@@ -39,7 +39,7 @@ public class PokemonGame {
 
         int menu;
         while (true) {
-            System.out.print("\n1)전투   2)도망   3)종료 : ");
+            System.out.print("\n" + myPokemon.name + "은(는) 무엇을 할까?\n1)전투   2)도망   3)종료 : ");
             menu = scanner.nextInt();
 
             if (menu == 1) {
@@ -51,6 +51,7 @@ public class PokemonGame {
                 System.out.println("게임을 종료합니다.");
                 break;
             }
+
         }
     }
 }
