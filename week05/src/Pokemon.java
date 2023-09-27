@@ -83,10 +83,17 @@ public abstract class Pokemon {
     public void attack(Pokemon targetPokemon, String skill) {
         System.out.println(this.name + "은(는) " + targetPokemon.name + "에게 " + skill + "을(를) 썼다!");
 
-        if (targetPokemon.defenceRate >= this.attackRate) {
+        int temporaryAttackRate = this.attackRate - targetPokemon.defenceRate;
+
+        if (temporaryAttackRate < 0)
+            temporaryAttackRate = 0;
+        else
+            temporaryAttackRate = targetPokemon.defenceRate - this.attackRate;
+
+        if (temporaryAttackRate == 0) {
             System.out.println("효과가 없는 듯 하다...");
         } else {
-            targetPokemon.hp = targetPokemon.hp - (this.attackRate - targetPokemon.defenceRate);
+            targetPokemon.hp = targetPokemon.hp - temporaryAttackRate;
         }
 
         if (targetPokemon.hp <= 0) {
