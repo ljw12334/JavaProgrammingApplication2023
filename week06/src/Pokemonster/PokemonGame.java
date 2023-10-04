@@ -57,6 +57,7 @@ public class PokemonGame {
                         System.out.println("기술은 1 ~ 4번 까지만 존재합니다!\n\n");
                     }
                 }
+                enemyPokemon.attack(myPokemon, (int) (Math.random() * 4) + 1);
 
             } else if (menu == 2) {
 
