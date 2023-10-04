@@ -1,13 +1,15 @@
 package Pokemonster;
 
+import java.util.ArrayList;
+
 //public final class Pokemonster.Pokemon {
 public abstract class Pokemon {
     //private int level;
     protected int level;
     private int hp;
     protected int evolveRate, attackRate, defenceRate;
-    protected String[] skills; // 최대 4가지 skill
-    protected int[] specialAttackRate; // 위력
+    protected ArrayList<String> skills; // 최대 4가지 skill
+    protected ArrayList<Integer> specialAttackRate; // 위력
     protected String name;
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
@@ -85,9 +87,9 @@ public abstract class Pokemon {
     public abstract void attack();
 
     public void attack(Pokemon targetPokemon, int skillNumber) {
-        System.out.println(this.name + "은(는) " + targetPokemon.name + "에게 " + this.skills[skillNumber - 1] + "을(를) 썼다!");
+        System.out.println(this.name + "은(는) " + targetPokemon.name + "에게 " + this.skills.get(skillNumber - 1) + "을(를) 썼다!");
 
-        int temporaryAttackRate = (this.attackRate + this.specialAttackRate[skillNumber - 1]) - targetPokemon.defenceRate;
+        int temporaryAttackRate = (this.attackRate + this.specialAttackRate.get(skillNumber - 1)) - targetPokemon.defenceRate;
 
         if (temporaryAttackRate < 0)
             temporaryAttackRate = 0;
