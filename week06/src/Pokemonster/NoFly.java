@@ -1,3 +1,4 @@
+package Pokemonster;
 
 public class NoFly implements Flyable{
     @Override

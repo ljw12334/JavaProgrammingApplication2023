@@ -1,3 +1,5 @@
+package Pokemonster;
+
 import java.util.Scanner;
 
 public class PokemonGame {
@@ -9,7 +11,7 @@ public class PokemonGame {
 
         Pokemon enemyPokemon = null;
         Pokemon myPokemon = null;          //추상클래스 변수선언 가능
-//        Pokemon pokemon = new Pokemon(); //추상클래스의 객체 생성은 불가
+//        Pokemonster.Pokemon pokemon = new Pokemonster.Pokemon(); //추상클래스의 객체 생성은 불가
 
         if (enemyPick == 0) {
             NoFly noFly = new NoFly();

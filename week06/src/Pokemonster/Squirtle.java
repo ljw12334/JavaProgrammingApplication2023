@@ -1,3 +1,4 @@
+package Pokemonster;
 
 public class Squirtle extends Pokemon{
     public Squirtle(Flyable f) {

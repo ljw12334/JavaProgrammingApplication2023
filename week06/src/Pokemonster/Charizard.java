@@ -1,3 +1,5 @@
+package Pokemonster;
+
 public class Charizard extends Pokemon{
     public Charizard(Flyable f) {
         System.out.println("자몽자몽!");

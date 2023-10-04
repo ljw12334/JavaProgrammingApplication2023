@@ -1,4 +1,6 @@
-//public final class Pokemon {
+package Pokemonster;
+
+//public final class Pokemonster.Pokemon {
 public abstract class Pokemon {
     //private int level;
     protected int level;
