@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.List;
 
 //public final class Pokemonster.Pokemon {
 public abstract class Pokemon {
@@ -8,8 +9,8 @@ public abstract class Pokemon {
     protected int level;
     private int hp;
     protected int evolveRate, attackRate, defenceRate;
-    protected ArrayList<String> skills; // 최대 4가지 skill
-    protected ArrayList<Integer> specialAttackRate; // 위력
+    protected List<String> skills; // 최대 4가지 skill
+    protected  List<Integer> specialAttackRate; // 위력
     protected String name;
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
