@@ -1,6 +1,7 @@
 package Pokemonster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pikachu extends Pokemon{
     public Pikachu(Flyable f) {
@@ -20,14 +21,17 @@ public class Pikachu extends Pokemon{
         this.skills = new ArrayList<>();
         this.specialAttackRate = new ArrayList<>();
 
-        this.skills.add("10만볼트");
-        this.skills.add("볼트태클");
-        this.skills.add("아이언테일");
-        this.skills.add("전광석화");
-        this.specialAttackRate.add(90);
-        this.specialAttackRate.add(120);
-        this.specialAttackRate.add(100);
-        this.specialAttackRate.add(40);
+        this.skills = new ArrayList<>(Arrays.asList("10만볼트", "볼트태클", "아이언테일", "전광석화"));
+        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 120, 100, 40));
+
+//        this.skills.add("10만볼트");
+//        this.skills.add("볼트태클");
+//        this.skills.add("아이언테일");
+//        this.skills.add("전광석화");
+//        this.specialAttackRate.add(90);
+//        this.specialAttackRate.add(120);
+//        this.specialAttackRate.add(100);
+//        this.specialAttackRate.add(40);
     }
 
     @Override
