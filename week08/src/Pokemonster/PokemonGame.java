@@ -31,16 +31,22 @@ public class PokemonGame {
             enemyPokemon.name = "상대 " + enemyPokemon.name;
 
             Scanner scanner = new Scanner(System.in);
-            System.out.print("포켓몬을 고르세요\n1)피카츄   2)꼬부기   3)리자몽 : ");
-            int pokemonPick = scanner.nextInt();
-            if (pokemonPick == 1) {
-                myPokemon = new Pikachu(new NoFly());
-            } else if (pokemonPick == 2) {
-                myPokemon = new Squirtle(new NoFly());
-            } else if (pokemonPick == 3) {
-                myPokemon = new Charizard(new Wings());
-            } else {
-                System.out.println("정상적인 값이 아닙니다!");
+
+            while (true) {
+                System.out.print("포켓몬을 고르세요\n1)피카츄   2)꼬부기   3)리자몽 : ");
+                int pokemonPick = scanner.nextInt();
+                if (pokemonPick == 1) {
+                    myPokemon = new Pikachu(new NoFly());
+                    break;
+                } else if (pokemonPick == 2) {
+                    myPokemon = new Squirtle(new NoFly());
+                    break;
+                } else if (pokemonPick == 3) {
+                    myPokemon = new Charizard(new Wings());
+                    break;
+                } else {
+                    System.out.println("정상적인 값이 아닙니다!");
+                }
             }
 
             int menu, skillNumber;
@@ -74,6 +80,7 @@ public class PokemonGame {
             System.out.println("예외 내용 : " + e.getMessage());
         } catch (NullPointerException e) {
             System.out.println("객체가 생성되지 않았습니다.");
+            System.out.println("예외 내용 : " + e.getMessage());
         } catch (Exception e) {
             System.out.println("예외가 발생하였습니다.");
             System.out.println("예외 내용 : " + e.getMessage());
