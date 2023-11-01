@@ -7,30 +7,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
+    public static Pokemon enemyPokemon = null;
     public static void main(String[] args) {
-        System.out.println("포켓몬 게임을 시작합니다\n야생 포켓몬이 나타났습니다");
-//        System.out.println(Math.random());
-//        System.out.println((int)(Math.random() * 6) + 1);
-        int enemyPick = (int)(Math.random() * 3);
-        Pokemon enemyPokemon = null;
+        System.out.println("포켓몬 게임을 시작합니다");
+
         Pokemon myPokemon = null;          //추상클래스 변수선언 가능
 //            Pokemonster.Pokemon pokemon = new Pokemonster.Pokemon(); //추상클래스의 객체 생성은 불가
-
-        if (enemyPick == 0) {
-            NoFly noFly = new NoFly();
-            enemyPokemon = new Pikachu(noFly);
-        } else if (enemyPick == 1) {
-            NoFly noFly = new NoFly();
-            enemyPokemon = new Squirtle(noFly);
-        } else if (enemyPick == 2) {
-            Wings wings = new Wings();
-            enemyPokemon = new Charizard(wings);
-        } else {
-            System.out.println("실행되면안됨");
-        }
-
-        enemyPokemon.name = "상대 " + enemyPokemon.name;
-
         try {
             Scanner scanner = new Scanner(System.in);
 
@@ -61,9 +43,11 @@ public class PokemonGame {
                 }
             }
 
+            produceEnemy();
+
             int menu, skillNumber;
             while (true) {
-                System.out.print("\n" + myPokemon.name + "은(는) 무엇을 할까?\n1)싸운다   2)포켓몬   3)도망친다 : ");
+                System.out.print("\n" + myPokemon.name + "은(는) 무엇을 할까?\n1)싸운다   2)도망친다   3)종료 : ");
                 menu = scanner.nextInt();
 
                 if (menu == 1) {
@@ -79,9 +63,10 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
-
+                    System.out.println("현재 지역을 탈출합니다");
+                    produceEnemy();
                 } else if (menu == 3) {
-                    System.out.println("무사히 도망쳤다!");
+                    System.out.println("게임을 종료합니다");
                     break;
                 } else {
                     System.out.println("메뉴에서 선택하세요");
@@ -102,5 +87,24 @@ public class PokemonGame {
         } finally {
             System.out.println("프로그램 종료!");
         }
+    }
+
+    private static void produceEnemy() {
+        int enemyPick = (int)(Math.random() * 3);
+        System.out.println("야생 포켓몬이 나타났습니다");
+        if (enemyPick == 0) {
+            NoFly noFly = new NoFly();
+            enemyPokemon = new Pikachu(noFly);
+        } else if (enemyPick == 1) {
+            NoFly noFly = new NoFly();
+            enemyPokemon = new Squirtle(noFly);
+        } else if (enemyPick == 2) {
+            Wings wings = new Wings();
+            enemyPokemon = new Charizard(wings);
+        } else {
+            System.out.println("실행되면안됨");
+        }
+
+        enemyPokemon.name = "상대 " + enemyPokemon.name;
     }
 }
