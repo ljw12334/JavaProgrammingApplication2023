@@ -21,7 +21,8 @@ public class PokemonGame {
                     System.out.print("포켓몬을 고르세요\n1)피카츄   2)꼬부기   3)리자몽 : ");
                     int pokemonPick = scanner.nextInt();
                     if (pokemonPick == 1) {
-                        myPokemon = new Pikachu(new NoFly());
+//                        myPokemon = new Pikachu(new NoFly());
+                        myPokemon = new Pikachu(() -> System.out.println("로켓 추진기로 날아갑니다"));
                         break;
                     } else if (pokemonPick == 2) {
                         myPokemon = new Squirtle(new NoFly());
