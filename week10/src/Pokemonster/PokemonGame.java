@@ -1,5 +1,8 @@
 package Pokemonster;
 
+import Fly.NoFly;
+import Fly.Wings;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

@@ -1,5 +1,7 @@
 package Pokemonster;
 
+import Fly.Flyable;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,7 +15,7 @@ public class Pikachu extends Pokemon{
         this.defenceRate = 40;
         this.setHp(35);
         this.name = "피카츄";
-        //this.flyable = new Pokemonster.NoFly();  // Association, Has-a (Composition)
+        //this.flyable = new Fly.NoFly();  // Association, Has-a (Composition)
         this.flyable = f;
 
 //        this.skills = new String[]{"10만볼트", "볼트태클", "아이언테일", "전광석화"};

@@ -1,6 +1,8 @@
-package Pokemonster;
+package Fly;
 
-public class Wings implements Flyable{
+import Fly.Flyable;
+
+public class Wings implements Flyable {
 //    @Override
 //    public void fly() {
 //
