@@ -63,6 +63,7 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
+                    myPokemon.performFly();
                     System.out.println("현재 지역을 탈출합니다");
                     produceEnemy();
                 } else if (menu == 3) {
