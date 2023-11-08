@@ -5,6 +5,7 @@ import Fly.Wings;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
@@ -74,9 +75,14 @@ public class PokemonGame {
                     System.out.println("좋은상처약을 썼다! 체력이 50 회복되었다.");
 //                    UnaryOperator<Integer> healPotion = hp -> hp + 50;
 
-                    Function<Integer, Integer> healPotion = hp -> hp + 50;
-                    int newHp = healPotion.apply(myPokemon.getHp());
-                    myPokemon.setHp(newHp);
+//                    Function<Integer, Integer> healPotion = hp -> hp + 50;
+//                    int newHp = healPotion.apply(myPokemon.getHp());
+//                    myPokemon.setHp(newHp);
+                    Consumer<Pokemon> healPotion = pokemon -> {
+                        pokemon.setHp(pokemon.getHp() + 50);
+                    };
+
+                    healPotion.accept(myPokemon);
 
                     System.out.println(myPokemon.name + "의 체력이 " + myPokemon.getHp() + "로 증가했다!");
 
