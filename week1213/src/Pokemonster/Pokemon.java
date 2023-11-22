@@ -16,7 +16,8 @@ public abstract class Pokemon {
 //    protected List<String> skills; // 최대 4가지 skill
 //    protected  List<Integer> specialAttackRate; // 위력
 
-    protected Map<Integer, Map<String, Integer>> skills;
+    protected Map<Integer, String> skills;
+    protected Map<String, Integer> specialAttackRate;
 
     protected String name;
 
@@ -94,10 +95,10 @@ public abstract class Pokemon {
 
     public abstract void attack();
 
-    public void attack(Pokemon targetPokemon, String skill) {
-        System.out.println(this.name + "은(는) " + targetPokemon.name + "에게 " + skill + "을(를) 썼다!");
+    public void attack(Pokemon targetPokemon, int skillNumber) {
+        System.out.println(this.name + "은(는) " + targetPokemon.name + "에게 " + this.skills.get(skillNumber) + "을(를) 썼다!");
 
-        int temporaryAttackRate = (this.attackRate + this.skills.get(skill)) - targetPokemon.defenceRate;
+        int temporaryAttackRate = (this.attackRate + this.specialAttackRate.get(this.skills.get(skillNumber))) - targetPokemon.defenceRate;
 
         if (temporaryAttackRate < 0)
             temporaryAttackRate = 0;

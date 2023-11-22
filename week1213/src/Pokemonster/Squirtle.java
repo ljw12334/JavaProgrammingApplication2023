@@ -4,6 +4,8 @@ import Fly.Flyable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Squirtle extends Pokemon{
     public Squirtle(Flyable f) {
@@ -23,8 +25,22 @@ public class Squirtle extends Pokemon{
 //        this.skills = new String[]{"물대포", "물의파동", "몸통박치기", "하이드로펌프"};
 //        this.specialAttackRate = new int[]{40, 60, 40, 120};
 
-        this.skills = new ArrayList<>(Arrays.asList("물대포", "물의파동", "몸통박치기", "하이드로펌프"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(40, 60, 40, 120));
+//        this.skills = new ArrayList<>(Arrays.asList("물대포", "물의파동", "몸통박치기", "하이드로펌프"));
+//        this.specialAttackRate = new ArrayList<>(Arrays.asList(40, 60, 40, 120));
+
+        this.skills = Map.of(1, "물대포", 2, "물의파동", 3, "몸통박치기", 4, "하이드로펌프");
+        this.specialAttackRate = Map.of("물대포", 40, "물의파동", 60, "몸통박치기", 40, "하이드로펌프", 120);
+//        this.skills = new HashMap<>();
+//        skills.put(1, "물대포");
+//        skills.put(2, "물의파동");
+//        skills.put(3, "몸통박치기");
+//        skills.put(4, "하이드로펌프");
+//
+//        this.specialAttackRate = new HashMap<>();
+//        specialAttackRate.put("물대포", 40);
+//        specialAttackRate.put("물의파동", 60);
+//        specialAttackRate.put("몸통박치기", 40);
+//        specialAttackRate.put("하이드로펌프", 120);
 
 //        this.skills = new ArrayList<>();
 //        this.specialAttackRate = new ArrayList<>();

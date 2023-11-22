@@ -4,6 +4,8 @@ import Fly.Flyable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Charizard extends Pokemon{
     public Charizard(Flyable f) {
@@ -22,8 +24,23 @@ public class Charizard extends Pokemon{
 //        this.skills = new String[]{"화염방사", "용의숨결", "할퀴기", "지진"};
 //        this.specialAttackRate = new int[]{90, 60, 40, 100};
 
-        this.skills = new ArrayList<>(Arrays.asList("화염방사", "용의숨결", "할퀴기", "지진"));
-        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 60, 40, 100));
+//        this.skills = new ArrayList<>(Arrays.asList("화염방사", "용의숨결", "할퀴기", "지진"));
+//        this.specialAttackRate = new ArrayList<>(Arrays.asList(90, 60, 40, 100));
+
+//        this.skills = Map.of(1, "화염방사", 2, "용의숨결", 3, "할퀴기", 4, "지진");
+//        this.specialAttackRate = Map.of("화염방사", 90, "용의숨결", 60, "할퀴기", 40, "지진", 100);
+        this.skills = new HashMap<>();
+        skills.put(1, "화염방사");
+        skills.put(2, "용의숨결");
+        skills.put(3, "할퀴기");
+        skills.put(4, "지진");
+
+        this.specialAttackRate = new HashMap<>();
+        specialAttackRate.put("화염방사", 90);
+        specialAttackRate.put("용의숨결", 60);
+        specialAttackRate.put("할퀴기", 40);
+        specialAttackRate.put("지진", 100);
+
 
 //        this.skills = new ArrayList<>();
 //        this.specialAttackRate = new ArrayList<>();
