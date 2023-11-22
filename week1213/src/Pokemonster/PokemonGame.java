@@ -54,7 +54,12 @@ public class PokemonGame {
 
                 if (menu == 1) {
                     while (true) {
-                        System.out.print("기술 : 1)" + myPokemon.skills.get(1) + "   2)" + myPokemon.skills.get(2) + "   3)" + myPokemon.skills.get(3) + "   4)" + myPokemon.skills.get(4) + " : ");
+                        System.out.print("기술 :");
+                        for (Integer i : myPokemon.skills.keySet()) {
+                            System.out.print("   " + i + ")" + myPokemon.skills.get(i));
+                        }
+                        System.out.print(" : ");
+
                         skillNumber = scanner.nextInt();
                         if (skillNumber >= 1 && skillNumber <= myPokemon.skills.size()) {
                             myPokemon.attack(enemyPokemon, skillNumber);
