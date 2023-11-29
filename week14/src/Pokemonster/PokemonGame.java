@@ -3,12 +3,15 @@ package Pokemonster;
 import Fly.NoFly;
 import Fly.Wings;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.*;
+import java.util.stream.Stream;
 
-public class PokemonGame {
+public class
+PokemonGame {
     public static Pokemon enemyPokemon = null;
+
+    public static int i;
     public static void main(String[] args) {
         System.out.println("포켓몬 게임을 시작합니다");
 
@@ -54,10 +57,23 @@ public class PokemonGame {
 
                 if (menu == 1) {
                     while (true) {
-                        System.out.print("기술 :");
-                        for (Integer i : myPokemon.skills.keySet()) {
-                            System.out.print("   " + i + ")" + myPokemon.skills.get(i));
-                        }
+                        System.out.println("기술 :");
+
+                        Collection<String> skillValues = myPokemon.skills.values();
+                        ArrayList<String> skillLists = new ArrayList<String>(skillValues);
+
+//                        for (int i = 0; i < skillLists.size(); i++) {
+//                            System.out.println((i + 1) + ") " + skillLists.get(i));
+//                        }
+
+                        i = 0;
+                        skillLists.stream().forEach(s -> {
+                            System.out.println(++i + ") " + s);
+                        });
+
+//                        for (Integer i : myPokemon.skills.keySet()) {
+//                            System.out.print("   " + i + ")" + myPokemon.skills.get(i));
+//                        }
                         System.out.print(" : ");
 
                         skillNumber = scanner.nextInt();
@@ -113,7 +129,7 @@ public class PokemonGame {
         }
     }
 
-    private static void produceEnemy() {
+    public static void produceEnemy() {
         int enemyPick = (int)(Math.random() * 3);
         System.out.println("야생 포켓몬이 나타났습니다");
         if (enemyPick == 0) {
